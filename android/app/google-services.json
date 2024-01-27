@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1085713499323",
+    "project_id": "gearbox-e5eac",
+    "storage_bucket": "gearbox-e5eac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1085713499323:android:b4acbab6290106f97f959e",
+        "android_client_info": {
+          "package_name": "com.example.gearbox"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEQgYEAQ2rUrnIRiBSN8oVQAe0221YwnA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
