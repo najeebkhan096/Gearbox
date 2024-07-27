@@ -9,6 +9,8 @@ import 'package:gearbox/Widgets/dialogue.dart';
 import 'package:gearbox/Widgets/text.dart';
 
 class MyCarsScreen extends StatefulWidget {
+  final bool ? emergency;
+  MyCarsScreen({required this.emergency});
   @override
   State<MyCarsScreen> createState() => _MyCarsScreenState();
 }

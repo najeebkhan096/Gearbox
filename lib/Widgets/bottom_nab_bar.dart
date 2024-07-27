@@ -34,31 +34,31 @@ class _MyBottomNavBarState extends State<MyBottomNavBar> {
           ),
           label: 'Home'.tr(), // Use translations
         ),
-        BottomNavigationBarItem(
-          icon: Image.asset(
-            "images/nav/cars.png",
-            width: width * 0.05,
-            color: currentIndex == 1
-                ? Color(0xffCD212A)
-                : Color(0xff707477),
-          ),
-          label: 'Cars'.tr(), // Use translations
-        ),
-        BottomNavigationBarItem(
-          icon: Image.asset(
-            "images/nav/shop.png",
-            width: width * 0.05,
-            color: currentIndex == 2
-                ? Color(0xffCD212A)
-                : Color(0xff707477),
-          ),
-          label: 'Shops'.tr(), // Use translations
-        ),
+        // BottomNavigationBarItem(
+        //   icon: Image.asset(
+        //     "images/nav/cars.png",
+        //     width: width * 0.05,
+        //     color: currentIndex == 1
+        //         ? Color(0xffCD212A)
+        //         : Color(0xff707477),
+        //   ),
+        //   label: 'Cars'.tr(), // Use translations
+        // ),
+        // BottomNavigationBarItem(
+        //   icon: Image.asset(
+        //     "images/nav/shop.png",
+        //     width: width * 0.05,
+        //     color: currentIndex == 2
+        //         ? Color(0xffCD212A)
+        //         : Color(0xff707477),
+        //   ),
+        //   label: 'Shops'.tr(), // Use translations
+        // ),
         BottomNavigationBarItem(
           icon: Image.asset(
             "images/nav/profile.png",
             width: width * 0.05,
-            color: currentIndex == 3
+            color: currentIndex == 1
                 ? Color(0xffCD212A)
                 : Color(0xff707477),
           ),
@@ -77,21 +77,22 @@ class _MyBottomNavBarState extends State<MyBottomNavBar> {
             }),
           );
         }
+        // if (index == 1) {
+        //   Navigator.of(context).push(
+        //     MaterialPageRoute(builder: (ctx) {
+        //       return MyCarsScreen();
+        //     }),
+        //   );
+        // }
+        // if (index == 2) {
+        //   Navigator.of(context).push(
+        //     MaterialPageRoute(builder: (ctx) {
+        //       return WorkshopsScreen();
+        //     }),
+        //   );
+        // }
+
         if (index == 1) {
-          Navigator.of(context).push(
-            MaterialPageRoute(builder: (ctx) {
-              return MyCarsScreen();
-            }),
-          );
-        }
-        if (index == 2) {
-          Navigator.of(context).push(
-            MaterialPageRoute(builder: (ctx) {
-              return WorkshopsScreen();
-            }),
-          );
-        }
-        if (index == 3) {
           Navigator.of(context).push(
             MaterialPageRoute(builder: (ctx) {
               return ProfileScreen();

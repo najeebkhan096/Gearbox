@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:gearbox/Screens/emergency.dart';
 import 'package:gearbox/Screens/home.dart';
 import 'package:gearbox/Screens/mycars.dart';
 import 'package:gearbox/Widgets/bottom_nab_bar.dart';
@@ -284,7 +285,7 @@ class _ServiceScreen2State extends State<ServiceScreen2> {
                                   if (index == 3) {
                                     Navigator.of(context)
                                         .push(MaterialPageRoute(builder: (ctx) {
-                                      return MyCarsScreen();
+                                      return MyCarsScreen(emergency: false,);
                                     })).then((value) {
                                       setState(() {
                                         currentIndex = 0;
@@ -522,12 +523,20 @@ class _ServiceScreen2State extends State<ServiceScreen2> {
                         Position result = await _determinePosition();
                         currentLocation =
                             LatLng(result.latitude, result.longitude);
-                        Navigator.of(context).pushNamed(HomeScreen.routename,
-                            arguments: ['all']);
+                        Navigator.of(context).push(
+                          MaterialPageRoute(builder: (ctx){
+                            return EmergencyScreen();
+                          })
+                        );
                       }
                     } else {
-                      Navigator.of(context)
-                          .pushNamed(HomeScreen.routename, arguments: ['all']);
+                      // Navigator.of(context)
+                      //     .pushNamed(HomeScreen.routename, arguments: ['all']);
+                      Navigator.of(context).push(
+                          MaterialPageRoute(builder: (ctx){
+                            return EmergencyScreen();
+                          })
+                      );
                     }
                   },
                   child: Image.asset(

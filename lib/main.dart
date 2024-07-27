@@ -17,7 +17,15 @@ Future<void> main() async {
   await EasyLocalization.ensureInitialized();
 
   if (!kIsWeb) {
-    await Firebase.initializeApp();
+    await Firebase.initializeApp(
+      options: FirebaseOptions(
+        storageBucket: "gearbox-e5eac.appspot.com",
+          apiKey: "AIzaSyDgWB2cVkltLw6phV7FTTylHJKjQRFg7No",
+          appId: "1:1085713499323:android:e34d8abee98c88d37f959e",
+          messagingSenderId: "1085713499323",
+          projectId: "gearbox-e5eac")
+
+    );
   } else {
 
     await Firebase.initializeApp(

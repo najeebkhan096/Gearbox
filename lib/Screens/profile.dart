@@ -7,6 +7,7 @@ import 'package:gearbox/Widgets/button.dart';
 import 'package:gearbox/Widgets/constant.dart';
 import 'package:gearbox/Widgets/text.dart';
 import 'package:gearbox/Widgets/wrapper.dart';
+import 'package:gearbox/modal/database.dart';
 import 'package:gearbox/modal/user.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -33,7 +34,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   void initState() {
     // TODO: implement initState
-    currentIndex = 3;
+    currentIndex = 1;
     super.initState();
   }
 
@@ -231,6 +232,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ? DarkBlueButton(
                 title: tr('profile.save'),
                 onprrss: () {
+
                   Navigator.of(context).push(
                       MaterialPageRoute(builder: (ctx) {
                         return LoginScreen();
@@ -342,24 +344,33 @@ class _ProfileScreenState extends State<ProfileScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    tr('profile.language'),
-                    style: TextStyle(
-                      fontSize: width * 0.035,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
+                  darktheme
+                      ? WhiteTextRegularNunita(
+                      title: tr('profile.language'),
+                      weight: FontWeight.w600,
+                      size: width * 0.035)
+                      : BlackTextRegularNunita(
+                      title: tr('profile.language'),
+                      weight: FontWeight.w600,
+                      size: width * 0.035),
+
                   DropdownButton(
                     underline: Text(""),
                     value: context.locale,
 
                     items: [
                       DropdownMenuItem(
-                        child: Text('English'),
+                        child:   BlackTextRegularNunita(
+                            title: tr('English'),
+                            weight: FontWeight.w600,
+                            size: width * 0.035),
                         value: Locale('en', 'US'),
                       ),
                       DropdownMenuItem(
-                        child: Text('Arabic'),
+                        child:    BlackTextRegularNunita(
+                            title: tr('Arabic'),
+                            weight: FontWeight.w600,
+                            size: width * 0.035),
                         value: Locale('ar', 'DZ'),
                       ),
                     ],
